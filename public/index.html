@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DataPulse | Business Sales Analytics</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="dashboard-header">
+        <div class="header-content">
+            <div>
+                <p class="eyebrow">BUSINESS ANALYTICS</p>
+                <h1>DataPulse</h1>
+                <p>Turn your sales data into clear business decisions.</p>
+            </div>
+            <a class="template-link" href="/api/template">Download CSV template</a>
+        </div>
+    </header>
+
+    <main class="dashboard">
+        <section class="panel upload-panel">
+            <div>
+                <h2>Upload your business data</h2>
+                <p class="muted">Upload a CSV or Excel (.xlsx) file. Your file is processed by this DataPulse server for the current session.</p>
+            </div>
+            <form id="upload-form" class="upload-form">
+                <label for="sales-file">Choose sales file</label>
+                <input type="file" id="sales-file" name="salesFile" accept=".csv,.xlsx" required>
+                <button type="submit" id="upload-button" class="primary-button">Upload and Analyze</button>
+            </form>
+            <p id="upload-message" class="status-message" role="status" aria-live="polite">Upload your file to begin, or use the sample data below.</p>
+            <button type="button" id="load-sample" class="text-button">Load sample sales data</button>
+        </section>
+
+        <section class="kpi-grid">
+            <article class="kpi-card"><h3>Total Revenue</h3><p id="total-revenue">₹0</p></article>
+            <article class="kpi-card"><h3>Total Orders</h3><p id="total-orders">0</p></article>
+            <article class="kpi-card"><h3>Units Sold</h3><p id="total-units">0</p></article>
+            <article class="kpi-card"><h3>Average Order Value</h3><p id="average-order-value">₹0</p></article>
+        </section>
+
+        <section class="panel filter-section">
+            <h2>Filter Sales</h2>
+            <div class="filter-controls">
+                <div class="filter-group region-group">
+                    <label for="region-filter">Region</label>
+                    <select id="region-filter"><option value="All">All Regions</option></select>
+                </div>
+                <div class="date-filters">
+                    <div class="filter-group">
+                        <label for="start-date">Start Date</label>
+                        <input type="date" id="start-date">
+                    </div>
+                    <div class="filter-group">
+                        <label for="end-date">End Date</label>
+                        <input type="date" id="end-date">
+                    </div>
+                    <button id="apply-filter" class="primary-button" type="button">Apply Date Filter</button>
+                    <button id="reset-filters" class="secondary-button" type="button">Reset Filters</button>
+                </div>
+            </div>
+            <p id="date-error" class="error-message" role="alert" aria-live="assertive" hidden></p>
+            <p id="dashboard-status" class="status-message" role="status" aria-live="polite">No data loaded yet.</p>
+        </section>
+
+        <section class="charts-grid">
+            <article class="panel chart-panel">
+                <h2>Revenue by Product</h2>
+                <div class="chart-container"><canvas id="product-chart"></canvas></div>
+            </article>
+            <article class="panel chart-panel">
+                <h2>Monthly Revenue Trend</h2>
+                <div class="chart-container"><canvas id="monthly-chart"></canvas></div>
+            </article>
+        </section>
+
+        <section class="panel insights-section">
+            <h2>Key Business Insights</h2>
+            <p class="muted">Insights update when the filters change.</p>
+            <div class="insights-container">
+                <article class="insight-card"><h3>Top Product</h3><p id="top-product">No data available</p></article>
+                <article class="insight-card"><h3>Top Region</h3><p id="top-region">No data available</p></article>
+                <article class="insight-card"><h3>Best Sales Month</h3><p id="top-month">No data available</p></article>
+            </div>
+        </section>
+
+        <section class="panel table-section">
+            <div class="table-heading">
+                <div>
+                    <h2>Sales Transactions</h2>
+                    <p class="muted">Download the records currently shown in this table.</p>
+                </div>
+                <button type="button" id="download-csv" class="primary-button" disabled>Download filtered CSV</button>
+            </div>
+            <div class="table-wrapper">
+                <table>
+                    <thead><tr>
+                        <th>Order ID</th><th>Order Date</th><th>Product</th>
+                        <th>Category</th><th>Region</th><th>Quantity</th><th>Sales</th>
+                    </tr></thead>
+                    <tbody id="sales-table-body"><tr><td colspan="7" class="empty-row">Upload a file to see records.</td></tr></tbody>
+                </table>
+            </div>
+        </section>
+        <p class="privacy-note">Privacy note: this starter app does not create accounts or save uploaded files permanently. Use synthetic or non-sensitive data while testing. Add authentication and access controls before deploying for real business customers.</p>
+    </main>
+
+    <footer>DataPulse · Sales data made easier to understand</footer>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

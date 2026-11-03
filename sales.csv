@@ -1,0 +1,11 @@
+OrderID,OrderDate,Product,Category,Region,Quantity,Sales
+101,2026-01-05,Laptop,Electronics,South,2,100000
+102,2026-01-12,Mouse,Accessories,North,5,2500
+103,2026-01-18,Phone,Electronics,East,3,45000
+104,2026-02-03,Keyboard,Accessories,South,4,6000
+105,2026-02-11,Laptop,Electronics,West,1,50000
+106,2026-02-20,Monitor,Electronics,North,2,30000
+107,2026-03-04,Mouse,Accessories,East,8,4000
+108,2026-03-15,Phone,Electronics,South,2,30000
+109,2026-03-22,Keyboard,Accessories,West,3,4500
+110,2026-03-28,Laptop,Electronics,North,2,100000

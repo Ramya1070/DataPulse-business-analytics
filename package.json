@@ -1,0 +1,15 @@
+{
+  "name": "datapulse-business-analytics",
+  "version": "1.0.0",
+  "description": "DataPulse sales analytics dashboard with CSV and Excel upload",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "multer": "^1.4.5-lts.2",
+    "xlsx": "^0.18.5"
+  }
+}
