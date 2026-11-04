@@ -50,6 +50,11 @@ DataPulse-business-analytics/
 │   ├── index.html
 │   ├── style.css
 │   └── app.js
+|── screenshots
+│   ├── dashboard.png
+│   ├── kpis-filters.png
+│   ├── charts.png
+│   └── sales-transactions.png
 │
 ├── sales.csv
 ├── server.js
