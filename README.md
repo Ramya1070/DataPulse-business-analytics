@@ -1,51 +1,144 @@
-# DataPulse Business Analytics
+# 📊 DataPulse – Business Analytics Dashboard
 
-A beginner-friendly Node.js + Express sales dashboard that accepts CSV and Excel `.xlsx` uploads, validates data on the server, displays interactive analytics, and exports filtered records to CSV.
+**DataPulse** is an interactive business analytics dashboard that helps users analyze sales data by uploading CSV and Excel files. It transforms raw sales data into meaningful business insights using KPI cards, interactive charts, filters, and data tables.
 
-## Requirements
+🌐 **Live Website:** https://datapulse-business-analytics.onrender.com
 
-- Node.js 18 or newer
-- Internet connection for the Chart.js CDN (charts only)
+💻 **GitHub Repository:** https://github.com/Ramya1070/DataPulse-business-analytics
 
-## Run locally
+---
 
-1. Open this folder in VS Code.
-2. Open Terminal → New Terminal.
-3. Install dependencies:
+## 🚀 Project Overview
 
-   ```bash
-   npm install
-   ```
+DataPulse is designed to make sales data analysis simple and accessible.
 
-4. Start the server:
+Users can upload their own sales datasets in CSV or Excel format and explore their business performance through an interactive dashboard.
 
-   ```bash
-   npm start
-   ```
+The application processes uploaded data through a Node.js backend and presents useful insights in an easy-to-understand visual format.
 
-5. Open `http://localhost:3000` in your browser. Do not open `public/index.html` directly and do not use Live Server for this backend version.
+## ✨ Key Features
 
-## Expected columns
+- **CSV & Excel Upload:** Upload sales datasets in `.csv` and `.xlsx` formats.
+- **KPI Cards:** View Total Revenue, Total Orders, Units Sold, and Average Order Value.
+- **Interactive Charts:** Visualize product-wise and monthly revenue.
+- **Dynamic Filters:** Filter sales data by region and date range.
+- **Business Insights:** Identify top-performing products, regions, and months.
+- **Sales Data Table:** View the processed sales records.
+- **CSV Export:** Download filtered sales data.
+- **Data Validation:** Validate uploaded data and date ranges.
+- **Responsive Design:** Access the dashboard on different screen sizes.
 
-The first worksheet in an Excel file, or the CSV header row, must contain these column names:
+## 🛠️ Technologies Used
 
-`OrderID, OrderDate, Product, Category, Region, Quantity, Sales`
+| Technology | Purpose |
+|---|---|
+| HTML5 | Webpage structure |
+| CSS3 | Styling and responsive design |
+| JavaScript | Frontend functionality |
+| Node.js | Backend runtime |
+| Express.js | Backend server |
+| SheetJS (xlsx) | CSV and Excel processing |
+| Chart.js | Interactive charts |
+| Multer | File upload handling |
 
-- `OrderDate`: use `YYYY-MM-DD` where possible.
-- `Quantity` and `Sales`: non-negative numbers.
-- Maximum upload size: 10 MB.
-- Only `.csv` and `.xlsx` extensions are accepted.
+## 📂 Project Structure
 
-A template is available at `http://localhost:3000/api/template`.
+```text
+DataPulse-business-analytics/
+│
+├── public/
+│   ├── index.html
+│   ├── style.css
+│   └── app.js
+│
+├── sales.csv
+├── server.js
+├── package.json
+├── package-lock.json
+├── .gitignore
+└── README.md
+```
 
-## Important privacy and deployment notes
+## ⚙️ Installation and Setup
 
-This is a learning starter, not a production-ready multi-customer service. Uploaded files are processed in server memory and are not deliberately saved to disk. The browser retains the processed rows for its current page session. There is no login, tenant separation, persistent database, rate limiting, or production security configuration. Before accepting real customer data or deploying publicly, add authentication, authorization, request/rate limits, HTTPS, privacy notices, access controls, monitoring, and tests. Avoid uploading confidential or personally identifying information while learning.
+Follow these steps to run DataPulse locally.
 
-## Files
+**1. Clone the repository**
 
-- `server.js`: backend upload validation, CSV/XLSX parsing, and CSV export endpoint.
-- `public/index.html`: website layout.
-- `public/style.css`: layout and responsive styling.
-- `public/app.js`: upload requests, filters, KPIs, charts, insights, and download behavior.
-- `sales.csv`: sample data.
+```bash
+git clone https://github.com/Ramya1070/DataPulse-business-analytics.git
+```
+
+**2. Navigate to the project folder**
+
+```bash
+cd DataPulse-business-analytics
+```
+
+**3. Install dependencies**
+
+```bash
+npm install
+```
+
+**4. Start the server**
+
+```bash
+npm start
+```
+
+**5. Open the application**
+
+Visit:
+
+```text
+http://localhost:3000
+```
+
+## 📋 Dataset Requirements
+
+Uploaded datasets should contain the following columns:
+
+| Column | Description |
+|---|---|
+| OrderID | Unique order identifier |
+| OrderDate | Date of the order |
+| Product | Product name |
+| Category | Product category |
+| Region | Sales region |
+| Quantity | Number of units sold |
+| Sales | Sales amount |
+
+Both CSV and Excel files are supported.
+
+## 📈 Dashboard Insights
+
+DataPulse helps users understand:
+
+- Overall sales performance.
+- Revenue generated by different products.
+- Sales contribution from different regions.
+- Monthly revenue trends.
+- Top-performing products and regions.
+
+## 🔒 Data Handling
+
+Uploaded files are processed by the backend for dashboard analysis. The application uses in-memory file processing and does not permanently store uploaded files.
+
+## 🌐 Deployment
+
+The application is deployed using **Render**.
+
+**Live Application:** https://datapulse-business-analytics.onrender.com
+
+## 👩‍💻 Author
+
+**P. Ramya Sree**
+
+B.Tech Student | IIT Madras Online BS in Data Science and Applications
+
+Interested in Data Analytics, Business Intelligence, and building practical technology projects.
+
+---
+
+⭐ If you find this project interesting, feel free to explore the repository and try the live dashboard!
