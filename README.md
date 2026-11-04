@@ -142,3 +142,16 @@ Interested in Data Analytics, Business Intelligence, and building practical tech
 ---
 
 ⭐ If you find this project interesting, feel free to explore the repository and try the live dashboard!
+## 📸 Dashboard Screenshots
+
+### 1. Main Dashboard
+![DataPulse Dashboard](screenshots/dashboard.png)
+
+### 2. KPIs and Filters
+![KPIs and Filters](screenshots/kpis-filters.png)
+
+### 3. Revenue Charts
+![Revenue Charts](screenshots/charts.png)
+
+### 4. Sales Transactions
+![Sales Transactions](screenshots/sales-transactions.png)
